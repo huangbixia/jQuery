@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css">
+    p {
+		background:yellow;
+		margin:6px 0;
+		cursor:pointer;
+	}
+	p.off {background: white;}
+	</style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	  $(function(){
+		$("p").click(function(){
+			$(this).toggleClass("off");
+		});
+		var p;
+		$("button").click(function(){
+			if(p){
+				p.appendTo("body");
+				p = null;
+			}else{
+			    p = $("p").detach();
+			}
+		});
+	  });
+	</script>
+  </head>
+  <body>
+	<p>段落文本1</p>
+	<div>布局文本</div>
+	<p>段落文本2</p>
+	<button>清除段落文本</button>
+  </body>
+</html>

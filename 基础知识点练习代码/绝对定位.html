@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	  $(function(){
+		var o1 = $("div").eq(0).offset();
+		$("div").eq(0).html("left:"+o1.left+"<br/>"+"top:"+o1.top);
+		
+		var o2 = $("div").eq(1).offset();
+		$("div").eq(1).html("left:"+o2.left+"<br/>"+"top:"+o2.top);
+		
+		var o3 = $("div").eq(2).offset();
+		$("div").eq(2).html("left:"+o3.left+"<br/>"+"top:"+o3.top);
+	  });
+	</script>
+	<style type="text/css">
+		body { padding:0; margin:0;}/*清除页边距*/
+		div {height:60px; width:200px; border:solid 10px red; }/*统一div元素的显示样式*/ 
+	</style>
+  </head>
+  <body>
+	<div>盒子1</div>
+	<div style="float:left">盒子2</div>
+	<div style="float:left">盒子3</div>
+  </body>
+</html>

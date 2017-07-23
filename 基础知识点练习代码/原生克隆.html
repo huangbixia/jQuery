@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css"></style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	   window.onload = function(){
+	      var div = document.getElementsByClassName("red")[0];
+		  
+		  div.onclick = function(){
+		    var div1 = div.cloneNode(true);
+			//object.insertBefore(x1,x2)插入object，x1为插入元素，x2为插入的位置
+			div.parentNode.insertBefore(div1,div.nextSibling);
+		  };
+	   };
+	</script>
+  </head>
+  <body>
+    <div class="red" title="no" ondblclick="alert('ok')">
+	   <p>段落文字</p>
+	</div>
+  </body>
+</html>

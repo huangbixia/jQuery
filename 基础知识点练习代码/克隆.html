@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css">
+	.off {background: yellow;}
+	</style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	  $(function(){
+		$("b").click(function(){
+		   $(this).toggleClass("off");
+		});
+		$("b").clone(true).insertAfter("p");
+	  });
+	</script>
+  </head>
+  <body>
+	<b>加粗文本</b>
+	<p>段落文本</p>
+  </body>
+</html>

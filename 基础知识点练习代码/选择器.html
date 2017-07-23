@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css"></style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	   $(function(){
+	      //加法运算
+		  $('input[type="button"]').click(function(){
+		      var sum = 0;
+			  $('input[type="text"]').each(function(){
+			    sum += parseInt($(this).val());
+			  });
+			  
+			  $('label').text(sum);
+		  });
+		  
+	      //设置输入框样式
+	      $('input:lt(2)').css({
+		    border:'none',
+			width: '80px',
+			marginLeft:'20px',
+			borderBottom:'1px solid #ccc'
+		  });
+	   });
+	</script>
+  </head>
+  <body>
+  <input type="text"/>+<input type="text"><input type="button" value="="/>
+  <label></label>
+  </body>
+</html>

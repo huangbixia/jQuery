@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css"></style>
+	<script>
+		window.onload = function(){
+		
+		 var btn = document.getElementsByTagName("input")[0];
+		 var p= document.getElementsByTagName("p")[0];
+		 
+		 var i = 1;
+		 do{
+		    btn.addEventListener("click",function(){
+			    p.innerHTML += "<br/>(" + i++ + ")"+ this.nodeName;
+			},true);
+			btn = btn.parentNode;
+		 }while(btn);
+		};
+	</script>
+  </head>
+  <body>
+     <input type="button" value="Event对象">
+	 <p>捕获型事件流传播过程：</p>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css">
+    div{
+		position:absolute;
+		width:100px;
+		height:100px;
+	}
+	.blue { background:blue; left:0px;}
+	.red { background:red; left:120px; z-index:2;}
+	.green { background:green; left:240px;}
+	.pos { top:120px;}
+	</style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	  $(function(){
+	    $("div").click(
+		   function(){
+			if($(this).hasClass("red")){
+			 $(this)
+			      .animate({left:120})
+				  .animate({left:240})
+				  .animate({left:0})
+				  .animate({left:240})
+				  .animate({left:120})
+			}
+		     
+		   }
+		);
+	  });
+	</script>
+  </head>
+  <body>
+    <div class="blue"></div>
+    <div class="red"> </div>
+    <div class="green"></div>
+    <div class="red pos"> </div>
+  </body>
+</html>

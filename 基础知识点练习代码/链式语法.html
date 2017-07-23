@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css"></style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	  $(function(){
+	    $('<input type="button" value="第一个按钮"/><input type="button" value="第二个按钮"/><input type="button" value="删除按钮事件处理函数"/><input type="button" value="隐藏或显示文本"/>').appendTo($('body'));
+		
+		$('input[type="button"]').eq(0).click(function(){
+		   alert("The first button");
+		}).end().eq(1).click(function(){
+		   alert("The second button");
+		}).end().eq(2).click(function(){
+		    $('input[type="button"]:eq(0)').unbind('click');
+		}).end().eq(3).toggle(function(){
+		   $('.panel').hide();
+		},function(){
+		   $('.panel').show();
+		})
+	  });
+	</script>
+  </head>
+  <body>
+  <div class="panel">jQuery链式语法演示</div>
+
+  </body>
+</html>

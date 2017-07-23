@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css">
+	  ul{border:solid 2px blue;}
+      li{border:solid 1px red; padding:2px;}
+      a{background:#FCF;}
+      div{border:solid 1px gray; padding:5px;}
+	</style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	  $(function(){
+        $("a").wrap("<li></li>");
+		$("body").wrapInner(
+		   "<div><ul></ul></div>"
+		);
+	  });
+	</script>
+  </head>
+  <body>
+<a href="#">首页</a>
+<a href="#">社区</a>
+<a href="#">新闻</a>
+  </body>
+</html>

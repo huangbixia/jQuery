@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css"></style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	  $(function(){
+	     $("input").focus(function(){
+		    if($(this).val()=="请输入文本"){
+			   $(this).val("");
+			}
+		 });
+		 $("input").blur(function(){
+		    if($(this).val()==""){
+			   $(this).val("请输入文本");
+			}
+		 });
+	  });
+	</script>
+  </head>
+  <body>
+    <input type="text" value="请输入文本"/>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css">
+	  div{height:20px;} 
+	</style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+	  $(function(){
+	    /*$("div").filter(".red").css("background-color","red");
+		$("p").has("span.red").css("background-color","red");*/
+		
+		$("p").filter(function(index){
+		   return $("span",this).length == 2;
+		}).css("background-color","red");
+	  });
+	</script>
+  </head>
+  <body>
+	<!-- <div class="blue"></div> -->
+	<!-- <div class="red"> </div> -->
+	<!-- <div class="green"></div> -->
+	<!-- <div class="red pos"></div> -->
+	
+	<p><span class="red">第一段文本</span></p>
+    <p><span>第二段文本</span><span></span></p>
+    <p>第三段文本</p>
+  </body>
+</html>
