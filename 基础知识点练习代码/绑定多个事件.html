@@ -6,11 +6,27 @@
 	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
 	<script>
 	  $(function(){
+		/*$("div").bind("click",function(){
+		  $("body").append("<p>点击事件1</p>");
+		});
+		$("div").bind("click",function(){
+		  $("body").append("<p>点击事件2</p>");
+		});
+		$("div").bind("mouseover",function(event){
+		  $("body").append(event.type);
+		});
+		$("div").bind("mouseout",function(event){
+		  $("body").append(event.type);
+		});*/
 		
+		//同时绑定多个事件类型
+		$("div").bind("mouseover mouseout",function(event){
+		   $("body").append(event.type+"<br/>");
+		});
 	  });
 	</script>
   </head>
   <body>
-     
+     <div>绑定多个事件</div>
   </body>
 </html>
