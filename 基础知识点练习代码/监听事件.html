@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<style type="text/css"></style>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script>
+		window.onload = function(){
+		   var btn = document.getElementsByTagName("input")[0];
+		   var p = document.getElementsByTagName("p")[0];
+		   var i = 0;
+		   
+		   do{
+		      //FF
+		      if(btn.addEventListener){
+			     btn.addEventListener("click",function(){
+				 	p.innerHTML += "<br/>("+ i++ + ")" +this.nodeName;
+				 },false);
+			  }
+			  else{
+			    //IE
+				btn.attachEvent("onclick",(function(btn){
+				   return function(){
+				     //返回闭包函数，从而动态锁定响应事件的当前对象
+					 p.innerHTML += "<br/>(" + i++ +")" +btn.nodeName;
+				   }
+				})(btn));
+			  }
+			  
+			  btn = btn.parentNode;
+		   }while(btn);
+
+		};
+	</script>
+  </head>
+  <body>
+     <input type="button" value="Event对象" />
+	 <p>事件流传播过程：</p>
+  </body>
+</html>
