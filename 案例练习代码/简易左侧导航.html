@@ -1,0 +1,141 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+<style>
+   .menu{
+      width:200px;
+	  border:1px solid red;
+	  margin:50px 200px;
+   }
+   .menu .menuList{
+      border:1px solid red;
+	  text-align:center;
+	  position:relative;
+	  height:30px;
+	  line-height:30px;
+	  display:none;
+   }
+   .subMenu{
+      position:absolute;
+	  border:1px solid black;
+	  left:198px;
+	  width:500px;
+	  display:none;
+   }
+   .secondMenu{
+      border:1px solid blue;
+	  position:relative;
+	  margin:0;
+   }
+   .secondMenu dt{
+    float:left;
+	margin-right:10px;
+   }
+   .secondMenu dd{
+      text-align:left;
+   }
+    .secondMenu dd span{
+      margin-left:10px;
+	  display:inline-block;
+   }
+</style>
+<title>无标题文档</title>
+<script src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    //固定二层菜单显示的位置,计算top的值
+	$(".menuList").each(function(index){
+	    var firstMenuH = $(".menuList").eq(0).outerHeight();
+	    $(this).find(".subMenu").
+		css({"top":-(index*firstMenuH+index*2+1)});
+		
+    $("#goodsMenu").bind("mouseover",function(){
+	   $(".menuList").show();
+	});
+	
+	$("#goodsMenu").bind("mouseout a",function(){
+	   $(".menuList").hide();
+	});
+	
+	$(".menuList").each(function(index){
+	   $(this).bind("mouseover",function(){
+	   $(".menuList").show();
+	   $("#goodsMenu").unbind("a");
+	   
+	   $(this).find(".subMenu").show();
+	   
+	   });
+	
+	$(this).bind("mouseout",function(){
+	    $(".menuList").hide();  
+		$(this).find(".subMenu").hide();
+	   });
+	   
+	});	
+	});
+});
+</script>
+<body>
+   <div class="menu">
+      <div style="text-align:center;" id="goodsMenu">商品目录</div>
+      <div class="menuList">
+	  一级
+	      <div class="subMenu">
+		    <dl class="secondMenu">
+			   <dt>a二级sss|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+			<dl class="secondMenu">
+			   <dt>a二级|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+			<dl class="secondMenu">
+			   <dt>a二级三三四四|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+			<dl class="secondMenu">
+			   <dt>a二级嗖嗖嗖|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+		  </div> 
+	  </div>
+	  <div class="menuList">一级
+	    <div class="subMenu">
+		    <dl class="secondMenu">
+			   <dt>b二级sss|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+			<dl class="secondMenu">
+			   <dt>b二级|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+			<dl class="secondMenu">
+			   <dt>b二级三三四四|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+			<dl class="secondMenu">
+			   <dt>b二级嗖嗖嗖|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+		  </div>
+	  </div>
+	  <div class="menuList">一级
+	    <div class="subMenu">
+		    <dl class="secondMenu">
+			   <dt>b二级sss|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+			<dl class="secondMenu">
+			   <dt>b二级|</dt>
+			   <dd><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span><span>三级</span></dd>
+			</dl>
+		</div>	
+	  </div>
+	  <div class="menuList">一级</div>
+	  <div class="menuList">一级 </div>
+	  <div class="menuList">一级</div>
+	  <div class="menuList">一级 </div>
+   </div>
+</body>
+</html>
